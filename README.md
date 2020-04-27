@@ -21,14 +21,31 @@ $ pip install pyjsonmodel --update
 
 ```python
 # 模型
+class GModel:
+    sss = None
+
+
+class ZModel:
+    aaa = None
+
+
 class People:
     name = None
     age = None
+    girlFriends = None
+    zzz = None
+
+    # 这里指定属性类型
+    __doc__ = {
+        "girlFriends": GModel,
+        "zzz": ZModel
+    }
+
 
 # 引用
 import jsonModel
 
-data = '[{"name":"jack","age":13},{"name":"jone","age":21}]'
+data = '[{"name":"jack","age":13,"girlFriends":[{"sss":"111"},{"sss":"222"}],"zzz":{"aaa":"aaa"}},{"name":"jone","age":21,"girlFriends":[{"sss":"111"},{"sss":"222"}],"zzz":{"aaa":"aaa"}}]'
 
 # json 转 实体类
 res = jsonModel.loads(data, People)

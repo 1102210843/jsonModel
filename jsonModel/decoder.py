@@ -31,19 +31,26 @@ class JsonDecoder(object):
             object_pairs_hook=self.object_pairs_hook)
         except Exception as err:
             raise json.JSONDecodeError("Json Loads Error", s, err.__str__())
-        if type(data) == list:
-            result = [self.dictToModel(d, mClass) for d in data]
-        elif type(data) == dict:
-            result = self.dictToModel(data, mClass)
+        return self.__transform__(data, mClass)
+
+    def __transform__(self, data, mClass):
+        if data.__class__ == list:
+            result = [self.__dictToModel__(d, mClass) for d in data]
+        elif data.__class__ == dict:
+            result = self.__dictToModel__(data, mClass)
         return result
 
-    def dictToModel(self, d, mClass):
+    def __dictToModel__(self, d, mClass):
         m = mClass()
-        for key in self.keys(mClass):
-            setattr(m, key, d.get(key))
+        doc = getattr(mClass, "__doc__")
+        for key in self.__keys__(mClass):
+            if doc and key in doc.keys():
+                setattr(m, key, self.__transform__(d.get(key), doc[key]))
+            else:
+                setattr(m, key, d.get(key))
         return m
 
-    def keys(self, mClass):
+    def __keys__(self, mClass):
         for key in dir(mClass):
             if not callable(getattr(mClass, key)) and key not in _KEYS:
                 yield key

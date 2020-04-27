@@ -7,3 +7,4 @@ dist/
 jsonModel.egg-info/
 pyjsonmodel.egg-info/
 build/
+test/
