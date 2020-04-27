@@ -33,6 +33,8 @@ class JsonEncoder(object):
         return result
 
     def __modelToDict__(self, obj):
+        if obj.__class__ in _CALSS:
+            return obj
         result = dict()
         for key in self.__keys__(obj.__class__):
             v = getattr(obj, key)
