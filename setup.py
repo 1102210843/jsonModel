@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="pyjsonmodel",
-    version="1.0.1",
+    version="1.0.2",
     author="Sun Yu",
     author_email="18610863095@163.com",
     description="json转实体类",

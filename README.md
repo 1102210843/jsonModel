@@ -34,6 +34,7 @@ class People:
     age = None
     girlFriends = None
     zzz = None
+    testList = None
 
     # 这里指定属性类型
     __doc__ = {
@@ -45,7 +46,7 @@ class People:
 # 引用
 import jsonModel
 
-data = '[{"name":"jack","age":13,"girlFriends":[{"sss":"111"},{"sss":"222"}],"zzz":{"aaa":"aaa"}},{"name":"jone","age":21,"girlFriends":[{"sss":"111"},{"sss":"222"}],"zzz":{"aaa":"aaa"}}]'
+data = '[{"testList":[1, 2, 3],"name":"jack","age":13,"girlFriends":[{"sss":"111"},{"sss":"222"}],"zzz":{"aaa":"aaa"}},{"testList":[1, 2, 3],"name":"jone","age":21,"girlFriends":[{"sss":"111"},{"sss":"222"}],"zzz":{"aaa":"aaa"}}]'
 
 # json 转 实体类
 res = jsonModel.loads(data, People)
