@@ -5,3 +5,5 @@ __pycache__/
 .idea/
 dist/
 jsonModel.egg-info/
+pyjsonmodel.egg-info/
+build/

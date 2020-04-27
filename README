@@ -6,11 +6,11 @@ python json数据转为实体类的工具
 2.7 ~ 3.8
 
 # 安装
-包被上传到[pypi](http://www.baidu.com)
+包被上传到[pypi](https://pypi.org/project/pyjsonmodel/)
 
 使用pip安装：
 ```
-$ pip install jsonModel
+$ pip install pyjsonmodel
 ```
 
 # 使用方法

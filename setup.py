@@ -1,11 +1,11 @@
 from __future__ import print_function
 from setuptools import setup, find_packages
 
-with open("README.md", "r") as fh:
+with open("README", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="jsonModel",
+    name="pyjsonmodel",
     version="1.0.0",
     author="Sun Yu",
     author_email="18610863095@163.com",
@@ -20,12 +20,10 @@ setup(
         "Environment :: Web Environment",
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
-        'Natural Language :: Chinese',
         'Operating System :: MacOS',
         'Operating System :: Microsoft',
         'Operating System :: POSIX',
         'Operating System :: Unix',
-        'Topic :: NLP',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.7',
